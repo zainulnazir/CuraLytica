@@ -1,13 +1,141 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* HealthTech Violet Theme (v7) - Mandated */
+
+    --background: 0 0% 100%;
+    /* Pure White */
+    --foreground: 216 16% 35%;
+    /* Grey-Blue */
+    --sidebar-bg: 210 14% 97%;
+    /* Off-White */
+    --heading: 220 26% 14%;
+    /* Dark Slate */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    --primary: 265 100% 46%;
+    /* #6200EA */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    /* #F3F4F6 */
+    --secondary-foreground: 220 26% 14%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    /* #64748B */
+
+    --accent: 268 75% 92%;
+    /* #E9D8FD */
+    --accent-foreground: 267 39% 34%;
+    /* #44337A */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    /* #E2E8F0 */
+    --input: 214 32% 91%;
+    --ring: 265 100% 46%;
+
+    --radius: 0.75rem;
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Outfit', system-ui, sans-serif;
+  }
+
+  [data-theme="dark"] {
+    --background: 220 18% 10%;
+    --foreground: 220 15% 78%;
+    --sidebar-bg: 220 18% 12%;
+    --heading: 0 0% 98%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 265 100% 70%;
+    --primary-foreground: 220 20% 12%;
+
+    --secondary: 220 16% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 16% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 265 30% 22%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 14% 22%;
+    --input: 220 14% 22%;
+    --ring: 265 100% 70%;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Scrollbar Utility */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-600 rounded-md;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-500;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
 }

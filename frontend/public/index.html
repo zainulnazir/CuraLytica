@@ -22,7 +22,57 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=fallback">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=block"
+    rel="stylesheet">
   <title>CuraLytica - AI-Powered Disease Diagnosis</title>
+
+  <style>
+    /* Prevents FOUT and Theme Flash */
+    html {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    html[data-fonts-loaded="true"] {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        // 1. Immediate Theme Application
+        const saved = localStorage.getItem('theme');
+        const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+
+        // 2. Wait for Fonts or Timeout
+        const reveal = () => {
+          document.documentElement.setAttribute('data-fonts-loaded', 'true');
+        };
+
+        if ('fonts' in document) {
+          Promise.all([
+            document.fonts.load('1em Inter'),
+            document.fonts.load('1em Outfit')
+          ]).then(reveal).catch(reveal);
+
+          // Safety timeout (500ms)
+          setTimeout(reveal, 500);
+        } else {
+          reveal();
+        }
+      } catch (e) {
+        console.error('Initial sequence failed:', e);
+        document.documentElement.setAttribute('data-fonts-loaded', 'true');
+      }
+    })();
+  </script>
 </head>
 
 <body>

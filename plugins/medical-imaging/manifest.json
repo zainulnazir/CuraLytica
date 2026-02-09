@@ -1,0 +1,12 @@
+{
+    "name": "Medical Imaging Analysis",
+    "version": "1.0.0",
+    "description": "AI-powered analysis of medical images (X-Ray, etc.) using TorchXRayVision.",
+    "entry_point": "start_mcp.sh",
+    "capabilities": [
+        "image_analysis"
+    ],
+    "tools": [
+        "analyze_chest_xray"
+    ]
+}

@@ -1,0 +1,9 @@
+mcp
+torch
+torchvision
+pillow
+numpy
+flask
+requests
+pydicom
+torchxrayvision

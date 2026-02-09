@@ -1,0 +1,33 @@
+{
+    "name": "CuraLytica Dev Environment",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "postCreateCommand": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install",
+    "forwardPorts": [
+        3000,
+        5001
+    ],
+    "portsAttributes": {
+        "3000": {
+            "label": "Frontend",
+            "onAutoForward": "notify"
+        },
+        "5001": {
+            "label": "Backend",
+            "onAutoForward": "silent"
+        }
+    }
+}

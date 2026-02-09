@@ -2,7 +2,7 @@
 
 CuraLytica is an AI-powered medical assistant designed to help patients and healthcare professionals analyze symptoms, lab reports, and medical imaging using advanced generative AI.
 
-![CuraLytica Demo](https://via.placeholder.com/800x400?text=CuraLytica+Demo+Placeholder)
+![CuraLytica Banner](curalytica_banner.png)
 
 ## Features
 
@@ -57,18 +57,30 @@ CuraLytica is an AI-powered medical assistant designed to help patients and heal
 
 ### Running the App
 
+The easiest way to start both the backend and frontend simultaneously is using the provided startup script:
+
+1.  **Run with one command**
+    ```bash
+    ./start_system.sh
+    ```
+    *This will start the Flask server on port 5001 and the React dashboard on port 3000.*
+
+---
+
+#### Manual Startup (Optional)
+
+If you prefer to start services individually:
+
 1.  **Start Backend**
     ```bash
-    # In backend terminal
+    cd backend
     python app.py
-    # Server runs on http://localhost:5001
     ```
 
 2.  **Start Frontend**
     ```bash
-    # In frontend terminal
+    cd frontend
     npm start
-    # App opens at http://localhost:3000
     ```
 
 ## License

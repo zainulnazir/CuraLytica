@@ -2,7 +2,7 @@
 
 CuraLytica is an AI-powered medical assistant designed to help patients and healthcare professionals analyze symptoms, lab reports, and medical imaging using advanced generative AI.
 
-![CuraLytica Banner](curalytica_banner.png)
+![CuraLytica Banner](curalytica_header.png)
 
 ## Features
 

@@ -1,4 +1,4 @@
-# CuraLytica
+# <img src="logo.png" width="40" height="40" align="center" alt="CuraLytica Logo"> CuraLytica
 
 CuraLytica is an AI-powered medical assistant designed to help patients and healthcare professionals analyze symptoms, lab reports, and medical imaging using advanced generative AI.
 
